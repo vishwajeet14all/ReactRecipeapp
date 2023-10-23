@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Favourite from "./components/Favourite";
 
 function AppRouter() {
+  
   const app_id = process.env.REACT_APP_ID;
   const app_key = process.env.REACT_APP_KEY;
   const [query, setQuery] = useState("Rice");
@@ -19,7 +20,7 @@ function AppRouter() {
       )
       .then((res) => setRecipes(res.data.hits))
       .catch((err) => console.log(err));
-  }, [query]);
+  }, [query, app_id, app_key]);
 
   return (
     <BrowserRouter>
