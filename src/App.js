@@ -23,12 +23,22 @@ function App({ recipes, setQuery }) {
   const addToFavorites = (curritem) => {
     // console.log(curritem.recipe.calories);
     const copyFav = [...fav];
-    const index = copyFav.findIndex((item) => item.recipe.calories === curritem.recipe.calories);
+    const index = copyFav.findIndex(
+      (item) => item.recipe.calories === curritem.recipe.calories
+    );
     // console.log(index);
     if (index === -1) {
       copyFav.push(curritem);
       setFav(copyFav);
-      localStorage.setItem("fav", JSON.stringify(copyFav));
+      const getFav = JSON.parse(localStorage.getItem("fav"));
+      if (getFav !== null) {
+        // console.log(getFav);
+        let dataToBeSave = [...getFav,...copyFav];
+        console.log(dataToBeSave);
+        localStorage.setItem("fav", JSON.stringify(dataToBeSave));
+      } else {
+        localStorage.setItem("fav", JSON.stringify(copyFav));
+      }
     } else {
       alert("Item is already there");
     }
@@ -50,8 +60,8 @@ function App({ recipes, setQuery }) {
               </div>
             </div>
             <div className="header-text">
-              <h1>Recipe App</h1>
-              <p>Let's Find some Recipe together...</p>
+              <h1 className="hero-heading">Recipe App</h1>
+              <p className="hero-para">Let's Find some Recipe together...</p>
             </div>
           </div>
         </div>

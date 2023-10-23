@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "./components/Navbar";
 import Favourite from "./components/Favourite";
+import NotFound from "./components/NotFound";
 
 function AppRouter() {
   
@@ -20,15 +21,19 @@ function AppRouter() {
       )
       .then((res) => setRecipes(res.data.hits))
       .catch((err) => console.log(err));
-  }, [query, app_id, app_key]);
+  }, [query, app_id, app_key]);   
 
+  console.log(recipes);
+
+  
   return (
     <BrowserRouter>
     <Navbar/>
       <Routes>
         <Route path="/" element={<App recipes={recipes} setQuery={setQuery}  />} />
-        <Route path="/recipe/:id" element={<RecipeDetails recipes={recipes} />}></Route>
+        {recipes.length > 0 && <Route path="/recipe/:id" element={<RecipeDetails recipes={recipes} />}></Route>}        
         <Route path="/favourite" element={<Favourite/>}></Route>
+        <Route path="*" element={<NotFound/>}></Route>
       </Routes>
     </BrowserRouter>
   );

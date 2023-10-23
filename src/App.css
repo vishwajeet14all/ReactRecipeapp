@@ -35,13 +35,13 @@
 }
 
 
-h1 {
+.hero-heading {
     color: #fff;
     margin-bottom: 15px;
     font-size: 40px;
 }
 
-p {
+.hero-para {
     font-size: 28px;
     color: #fff;
 }
@@ -111,3 +111,8 @@ input {
 
 
 
+/* page not found */
+.NotFound{    
+    margin-top: 40vh;
+    text-align: center;     
+}

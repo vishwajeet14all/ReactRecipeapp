@@ -12,7 +12,14 @@ export default function Favourite() {
     }
   }, []);
 
-  
+  const removeFav = (item) => {
+    console.log(item);
+    let newData = [...data]  
+    newData = data.filter((el) => el.recipe.calories !== item);  
+    setData(newData)
+    console.log(newData);      
+    localStorage.setItem("fav", JSON.stringify(newData));
+  };
 
   return (
     <div className="container">
@@ -38,12 +45,12 @@ export default function Favourite() {
                     <Link to="/" className="btn btn-primary">
                       Back
                     </Link>
-                    {/* <button
+                    <button
                       className="btn me-5 btn-danger"
                       onClick={() => removeFav(item.recipe.calories)}
                     >
                       Remove
-                    </button> */}
+                    </button>
                   </div>
                 </div>
               </>
