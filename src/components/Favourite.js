@@ -13,20 +13,20 @@ export default function Favourite() {
   }, []);
 
   const removeFav = (item) => {
-    let newData = [...data]    
-    newData = data.filter((el) => el.recipe.calories !== item.calories);  
-    setData(newData)
-    localStorage.setItem("savedItems", JSON.stringify(newData));
+    // let newData = [...data]    
+    // newData = data.filter((el) => el.recipe.calories !== item.calories);  
+    // setData(newData)
+    // localStorage.setItem("savedItems", JSON.stringify(newData));
   };
 
   return (
     <div className="container">
       {data.map((item) => (                
-        <div className="card mt-5">            
+        <div className="card mt-4">            
           <div className="row">            
             {item.recipe && (                               
               <>
-                <div className="col ">
+                <div className="col">
                   <img src={item.recipe.image} alt="" />
                 </div>
                 <div className="col p-3">
@@ -43,12 +43,12 @@ export default function Favourite() {
                     <Link to="/" className="btn btn-primary">
                       Back
                     </Link>
-                    <button
+                    {/* <button
                       className="btn me-5 btn-danger"
                       onClick={() => removeFav(item.recipe.calories)}
                     >
                       Remove
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </>

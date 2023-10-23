@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
-      <div className="container-fluid">
-        <p className="navbar-brand" >
-          Delicious
-        </p>
+      <div className="container-fluid">        
         <button
           className="navbar-toggler"
           type="button"
