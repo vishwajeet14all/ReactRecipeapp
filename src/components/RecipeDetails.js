@@ -16,8 +16,9 @@ export default function RecipeDetails({ recipes }) {
 
   return (
     <div className="container">
+      <div className="card mt-4">    
       <div className="row">
-        <div className="col p-3">
+        <div className="col ">
           <img src={image} alt="" />
         </div>
         <div className="col p-3">
@@ -29,6 +30,7 @@ export default function RecipeDetails({ recipes }) {
           </ul>
           <p className="text-dark fs-5 ">Calories: {calories}</p>
           <Link to="/" className="btn btn-primary">Back</Link>
+          </div>
         </div>        
       </div>
     </div>
