@@ -12,12 +12,7 @@ export default function Favourite() {
     }
   }, []);
 
-  const removeFav = (item) => {
-    // let newData = [...data]    
-    // newData = data.filter((el) => el.recipe.calories !== item.calories);  
-    // setData(newData)
-    // localStorage.setItem("savedItems", JSON.stringify(newData));
-  };
+  
 
   return (
     <div className="container">
