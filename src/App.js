@@ -34,7 +34,7 @@ function App({ recipes, setQuery }) {
       if (getFav !== null) {
         // console.log(getFav);
         let dataToBeSave = [...getFav,...copyFav];
-        console.log(dataToBeSave);
+        // console.log(dataToBeSave);
         localStorage.setItem("fav", JSON.stringify(dataToBeSave));
       } else {
         localStorage.setItem("fav", JSON.stringify(copyFav));

@@ -8,16 +8,16 @@ export default function Favourite() {
     const getFav = JSON.parse(localStorage.getItem("fav"));
     if (getFav) {
       setData(getFav);
-      console.log(getFav);
+      // console.log(getFav);
     }
   }, []);
 
   const removeFav = (item) => {
-    console.log(item);
+    // console.log(item);
     let newData = [...data]  
     newData = data.filter((el) => el.recipe.calories !== item);  
     setData(newData)
-    console.log(newData);      
+    // console.log(newData);      
     localStorage.setItem("fav", JSON.stringify(newData));
   };
 
